@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokoh Cerita</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+
+      font-family:Arial, Helvetica, sans-serif;
+
+      min-height:100vh;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.45)
+        ),
+        url('../assets/Background.jpeg');
+
+      background-size:cover;
+      background-position:center;
+
+      overflow-x:hidden;
+
+      color:white;
+
+      position:relative;
+    }
+
+    /* Glow Background */
+    .blur-circle{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(100px);
+      opacity:0.45;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .blur1{
+      width:320px;
+      height:320px;
+      background:#00ffae;
+
+      top:-100px;
+      left:-100px;
+    }
+
+    .blur2{
+      width:380px;
+      height:380px;
+      background:#00cfff;
+
+      bottom:-120px;
+      right:-120px;
+    }
+
+    /* Container */
+    .container{
+
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      max-width:1400px;
+
+      margin:auto;
+
+      padding:
+        50px
+        40px
+        140px;
+    }
+
+    /* Title */
+    .title{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .title h1{
+
+      font-size:70px;
+
+      color:#ffe66d;
+
+      text-shadow:
+        0 0 18px rgba(255,230,109,0.8),
+        0 0 40px rgba(255,230,109,0.4);
+
+      margin-bottom:15px;
+    }
+
+    .title h2{
+
+      font-size:42px;
+
+      color:#ffffff;
+
+      text-shadow:
+        0 0 10px rgba(255,255,255,0.45);
+    }
+
+    /* Character Layout */
+    .character-wrapper{
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(350px, 1fr));
+
+      gap:45px;
+
+      align-items:stretch;
+    }
+
+    /* Card */
+    .character-card{
+
+      background:
+        rgba(255,255,255,0.12);
+
+      backdrop-filter:blur(12px);
+
+      border:
+        2px solid rgba(255,255,255,0.15);
+
+      border-radius:35px;
+
+      padding:40px 30px;
+
+      text-align:center;
+
+      position:relative;
+
+      overflow:hidden;
+
+      transition:0.3s ease;
+
+      box-shadow:
+        0 0 30px rgba(0,0,0,0.35);
+
+      min-height:620px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      align-items:center;
+    }
+
+    .character-card:hover{
+
+      transform:
+        translateY(-10px)
+        scale(1.02);
+
+      box-shadow:
+        0 0 40px rgba(0,255,180,0.35);
+    }
+
+    /* Gloss Effect */
+    .character-card::before{
+
+      content:"";
+
+      position:absolute;
+
+      top:-80px;
+      left:-80px;
+
+      width:220px;
+      height:220px;
+
+      border-radius:50%;
+
+      background:
+        rgba(255,255,255,0.12);
+
+      filter:blur(35px);
+    }
+
+    /* Character Image */
+    .character-img{
+
+      width:230px;
+      height:230px;
+
+      object-fit:contain;
+      object-position:center top;
+
+      padding:10px;
+
+      background:
+        rgba(255,255,255,0.08);
+
+      border-radius:50%;
+
+      border:
+        7px solid rgba(255,255,255,0.75);
+
+      box-shadow:
+        0 0 30px rgba(255,255,255,0.45);
+
+      margin-bottom:30px;
+
+      flex-shrink:0;
+
+      transition:0.3s;
+    }
+
+    .character-card:hover .character-img{
+      transform:scale(1.05);
+    }
+
+    /* Name */
+    .character-card h3{
+
+      font-size:44px;
+
+      margin-bottom:25px;
+
+      color:#76ff7a;
+
+      text-shadow:
+        0 0 14px rgba(118,255,122,0.65);
+    }
+
+    /* Description */
+    .character-card p{
+
+      font-size:25px;
+
+      line-height:1.9;
+
+      color:#f5f5f5;
+
+      max-width:90%;
+    }
+
+    /* Back Button */
+    .back-btn{
+
+      position:fixed;
+
+      bottom:30px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      z-index:10;
+
+      padding:
+        18px
+        55px;
+
+      border:none;
+      border-radius:18px;
+
+      font-size:28px;
+      font-weight:bold;
+
+      color:white;
+
+      cursor:pointer;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #ffb347 0%,
+          #ff8c00 45%,
+          #cc6500 100%
+        );
+
+      box-shadow:
+        0 7px 0 #8f4300,
+        0 0 25px rgba(255,140,0,0.65),
+        inset 0 4px 8px rgba(255,255,255,0.45);
+
+      transition:0.2s ease;
+    }
+
+    .back-btn:hover{
+
+      transform:
+        translateX(-50%)
+        scale(1.08);
+    }
+
+    .back-btn:active{
+
+      transform:
+        translateX(-50%)
+        translateY(4px);
+    }
+
+    /* Responsive */
+    @media(max-width:992px){
+
+      .title h1{
+        font-size:52px;
+      }
+
+      .title h2{
+        font-size:32px;
+      }
+
+      .character-card{
+        min-height:auto;
+      }
+
+      .character-img{
+        width:190px;
+        height:190px;
+      }
+
+      .character-card h3{
+        font-size:36px;
+      }
+
+      .character-card p{
+        font-size:22px;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .container{
+        padding:
+          35px
+          20px
+          130px;
+      }
+
+      .title{
+        margin-bottom:40px;
+      }
+
+      .title h1{
+        font-size:40px;
+      }
+
+      .title h2{
+        font-size:24px;
+      }
+
+      .character-wrapper{
+        gap:30px;
+      }
+
+      .character-card{
+        padding:30px 20px;
+        border-radius:28px;
+      }
+
+      .character-img{
+        width:160px;
+        height:160px;
+      }
+
+      .character-card h3{
+        font-size:30px;
+      }
+
+      .character-card p{
+        font-size:19px;
+        max-width:100%;
+      }
+
+      .back-btn{
+        font-size:22px;
+        padding:14px 38px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Glow -->
+  <div class="blur-circle blur1"></div>
+  <div class="blur-circle blur2"></div>
+
+  <div class="container">
+
+    <!-- Title -->
+    <div class="title">
+
+      <h2>“Aku Mau Membantu Ibu”</h2>
+
+    </div>
+
+    <!-- Character Cards -->
+    <div class="character-wrapper">
+
+      <!-- Bima -->
+      <div class="character-card">
+
+        <img
+          src="../assets/arga.png"
+          alt="Bima"
+          class="character-img"
+        >
+
+        <h3>Bima</h3>
+
+        <p>
+          Ceria, kadang malas,
+          tetapi mau belajar
+          dan suka membantu ibu.
+        </p>
+
+      </div>
+
+      <!-- Ibu -->
+      <div class="character-card">
+
+        <img
+          src="../assets/dita.png"
+          alt="Ibu"
+          class="character-img"
+        >
+
+        <h3>Ibu</h3>
+
+        <p>
+          Lembut, penyayang,
+          dan selalu sabar
+          kepada anaknya.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Back Button -->
+  <button
+    class="back-btn"
+    onclick="window.location.href='../index.html'">
+
+    ⬅ KEMBALI
+
+  </button>
+
+</body>
+</html>

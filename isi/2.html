@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR STORY - Aku Mau Membantu Ibu</title>
+
+  <style>
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+      url('../assets/Background.jpeg');
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    .blur{
+      position:fixed;
+      border-radius:50%;
+      filter:blur(120px);
+      opacity:0.35;
+      z-index:0;
+    }
+
+    .blur1{width:350px;height:350px;background:#00ffaa;top:-100px;left:-100px;}
+    .blur2{width:420px;height:420px;background:#00cfff;bottom:-120px;right:-120px;}
+
+    .container{
+      position:relative;
+      z-index:2;
+      width:92%;
+      max-width:1300px;
+      margin:auto;
+      padding:50px 0 140px;
+    }
+
+    .title{text-align:center;margin-bottom:60px;}
+    .title h2{font-size:42px;}
+
+    .story-box{
+      background:rgba(255,255,255,0.10);
+      backdrop-filter:blur(10px);
+      border:2px solid rgba(255,255,255,0.12);
+      border-radius:35px;
+      padding:40px;
+      margin-bottom:40px;
+      box-shadow:0 0 25px rgba(0,0,0,0.35);
+    }
+
+    .story-box h3{
+      font-size:38px;
+      margin-bottom:25px;
+      color:#7dff8d;
+    }
+
+    .narator{
+      color:#ffe082;
+      font-size:27px;
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    .dialog{
+      font-size:27px;
+      line-height:1.9;
+      margin-left:18px;
+      margin-bottom:18px;
+    }
+
+    .action{
+      font-size:23px;
+      color:#b0bec5;
+      margin-left:35px;
+      margin-bottom:18px;
+      font-style:italic;
+    }
+
+    .moral{
+      background:rgba(255,215,0,0.10);
+      border:2px solid rgba(255,215,0,0.25);
+    }
+
+    .back-btn{
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:9999; /* INI KUNCINYA */
+
+  padding:18px 55px;
+  border:none;
+  border-radius:18px;
+  font-size:28px;
+  font-weight:bold;
+  color:white;
+
+  cursor:pointer;
+
+  background:linear-gradient(to bottom,#ffb347,#ff8c00,#cc6500);
+
+  box-shadow:
+    0 7px 0 #8f4300,
+    0 0 25px rgba(255,140,0,0.65),
+    inset 0 4px 8px rgba(255,255,255,0.45);
+}
+
+  </style>
+</head>
+<body>
+
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+
+<div class="container">
+
+<div class="title">
+<h2>“Aku Mau Membantu Ibu”</h2>
+</div>
+
+<!-- BAGIAN 1 -->
+<div class="story-box">
+<h3>BAGIAN 1 – Pagi di Rumah</h3>
+
+
+<p class="narator">
+Pagi hari yang cerah, suasana rumah terasa tenang. Ibu sedang sibuk membersihkan rumah.
+</p>
+
+<p class="dialog"><b>Ibu (pelan):</b> “Hmm… lantainya masih kotor. Ibu harus menyapu dulu.”</p>
+
+<p class="dialog"><b>Bima:</b> “Ibu, aku sudah bangun!”</p>
+<p class="dialog"><b>Ibu (tersenyum):</b> “Selamat pagi, Bima. Sudah cuci muka belum?”</p>
+<p class="dialog"><b>Bima:</b> “Sudah, Bu. Ibu sedang apa?”</p>
+<p class="dialog"><b>Ibu:</b> “Ibu sedang membersihkan rumah supaya rapi dan nyaman.”</p>
+
+</div>
+
+<!-- BAGIAN 2 -->
+<div class="story-box">
+<h3>BAGIAN 2 – Bima Masih Santai</h3>
+
+
+<p class="narator">
+Bima melihat ibu bekerja, tetapi ia masih ingin bermain.
+</p>
+
+<p class="dialog"><b>Bima:</b> “Bu, Bima mau main dulu ya.”</p>
+<p class="dialog"><b>Ibu (lembut):</b> “Boleh, tapi nanti jangan lupa membantu ya.”</p>
+<p class="dialog"><b>Bima (cuek):</b> “Iya, Bu…”</p>
+
+<p class="narator">
+Bima pun pergi bermain, sementara ibu tetap bekerja sendirian.
+</p>
+</div>
+
+<!-- BAGIAN 3 -->
+<div class="story-box">
+<h3>BAGIAN 3 – Ibu Mulai Kelelahan</h3>
+
+
+<p class="narator">
+Ibu terus bekerja. Ia menyapu, merapikan meja, dan membersihkan rumah.
+</p>
+
+<p class="dialog"><b>Ibu:</b> “Aduh… capek juga ya…”</p>
+
+<p class="narator">
+Bima melihat ibu dari kejauhan.
+</p>
+
+<p class="dialog"><b>Bima (pelan):</b> “Ibu kelihatan capek…”</p>
+</div>
+
+<!-- BAGIAN 4 -->
+<div class="story-box">
+<h3>BAGIAN 4 – Bima Mulai Berpikir</h3>
+
+
+<p class="narator">
+Bima mulai merasa tidak enak hati.
+</p>
+
+<p class="dialog"><b>Bima:</b> “Ibu capek karena bekerja sendirian… aku harus membantu.”</p>
+</div>
+
+<!-- BAGIAN 5 -->
+<div class="story-box">
+<h3>BAGIAN 5 – Menawarkan Bantuan</h3>
+
+
+<p class="dialog"><b>Bima:</b> “Ibu, aku mau membantu!”</p>
+<p class="dialog"><b>Ibu:</b> “Wah, benarkah? Terima kasih, Bima.”</p>
+<p class="dialog"><b>Bima:</b> “Iya, Bu! Biar ibu tidak capek.”</p>
+</div>
+
+<!-- BAGIAN 6 -->
+<div class="story-box">
+<h3>BAGIAN 6 – Mulai Membersihkan</h3>
+
+
+<p class="narator">
+Bima mulai membantu ibu.
+</p>
+
+<p class="dialog"><b>Bima:</b> “Aku akan menyapu lantai!”</p>
+
+<p class="dialog"><b>Ibu:</b> “Bagus sekali, Bima. Hati-hati ya.”</p>
+
+<p class="narator">
+Bima menyapu dengan semangat, walaupun belum rapi.
+</p>
+
+<p class="dialog"><b>Bima:</b> “Bu, kok masih kotor ya?”</p>
+<p class="dialog"><b>Ibu:</b> “Sapunya pelan-pelan, Nak.”</p>
+<p class="dialog"><b>Bima:</b> “Oh, begitu ya!”</p>
+</div>
+
+<!-- BAGIAN 7 -->
+<div class="story-box">
+<h3>BAGIAN 7 – Belajar Bertanggung Jawab</h3>
+
+<p class="narator">
+Bima mencoba lagi dengan lebih hati-hati.
+</p>
+
+<p class="dialog"><b>Bima:</b> “Sekarang lebih bersih!”</p>
+<p class="dialog"><b>Ibu:</b> “Iya, kamu hebat sekali.”</p>
+
+<p class="narator">
+Setelah itu, Bima membantu merapikan meja.
+</p>
+
+<p class="dialog"><b>Bima:</b> “Aku rapikan meja ya, Bu.”</p>
+</div>
+
+<!-- BAGIAN 8 -->
+<div class="story-box">
+<h3>BAGIAN 8 – Rumah Menjadi Bersih</h3>
+
+
+<p class="narator">
+Tidak lama kemudian, rumah menjadi bersih dan rapi.
+</p>
+
+<p class="dialog"><b>Ibu:</b> “Alhamdulillah, sekarang rumah kita sudah bersih.”</p>
+<p class="dialog"><b>Bima:</b> “Iya, Bu! Ternyata membantu itu menyenangkan.”</p>
+</div>
+
+<!-- BAGIAN 9 -->
+<div class="story-box">
+<h3>BAGIAN 9 – Ibu Bahagia</h3>
+
+
+<p class="dialog"><b>Ibu:</b> “Terima kasih ya, Bima. Ibu sangat senang.”</p>
+<p class="dialog"><b>Bima:</b> “Sama-sama, Bu. Bima mau membantu ibu setiap hari.”</p>
+</div>
+
+<!-- BAGIAN 10 -->
+<div class="story-box">
+<h3>BAGIAN 10 – Penutup</h3>
+
+
+<p class="narator">
+Sejak saat itu, Bima selalu membantu ibu di rumah. Mereka pun hidup dengan bahagia.
+</p>
+</div>
+
+<!-- MORAL -->
+<div class="story-box moral">
+<h3>Pesan Moral</h3>
+
+<p class="narator">
+Membantu orang tua adalah perbuatan baik yang harus kita biasakan setiap hari. Kita bisa membantu dengan hal sederhana, seperti merapikan tempat tidur, menyapu, atau membantu membereskan barang. Jika kita membantu, pekerjaan orang tua menjadi lebih ringan dan mereka akan merasa senang. Dengan saling membantu, keluarga menjadi lebih rukun dan nyaman.
+</p>
+
+</div>
+
+</div>
+
+<button
+    class="back-btn"
+    onclick="window.location.href='../index.html'">
+
+    ⬅ KEMBALI
+
+  </button>
+
+</body>
+</html>

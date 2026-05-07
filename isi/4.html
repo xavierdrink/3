@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aku Mau Membantu Ibu</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+background:#000;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+#stage{
+width:100vw;
+height:100vh;
+background-size:cover;
+background-position:center;
+transition:1s;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+rgba(0,0,0,.15),
+rgba(0,0,0,.45)
+);
+}
+
+.nav{
+
+position:fixed;
+
+bottom:20px;
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+gap:12px;
+
+background:rgba(255,255,255,.22);
+
+padding:12px;
+
+border-radius:30px;
+
+backdrop-filter:blur(8px);
+
+z-index:20;
+}
+
+button,a{
+
+padding:12px 18px;
+
+border:none;
+border-radius:20px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+cursor:pointer;
+
+color:white;
+
+font-size:18px;
+
+transition:.2s;
+}
+
+button:hover,
+a:hover{
+transform:scale(1.06);
+}
+
+.prev{
+background:#339af0;
+}
+
+.next{
+background:#51cf66;
+}
+
+.pause{
+background:#fab005;
+}
+
+.back{
+background:#ff6b6b;
+}
+
+.start{
+
+position:fixed;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,.55);
+
+z-index:50;
+}
+
+.start button{
+
+font-size:30px;
+
+padding:22px 38px;
+
+background:#51cf66;
+
+box-shadow:
+0 0 30px rgba(81,207,102,.55);
+}
+
+@media(max-width:768px){
+
+button,a{
+
+font-size:15px;
+padding:10px 15px;
+}
+
+.start button{
+
+font-size:24px;
+padding:18px 30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="stage">
+
+<div class="overlay"></div>
+
+</div>
+
+<div class="start" id="start">
+
+<button onclick="mulai()">
+
+▶ Mulai Cerita
+
+</button>
+
+</div>
+
+<div class="nav">
+
+<button class="prev" onclick="prev()">⏮</button>
+
+<button class="pause" onclick="pause()">⏸</button>
+
+<button class="next" onclick="next()">⏭</button>
+
+<a href="../index.html" class="back">⬅</a>
+
+</div>
+
+<audio id="audio"></audio>
+
+<script>
+
+const data=[
+
+{
+bg:"../assets/bg/1.png",
+audio:"../assets/pagi.mp3"
+},
+
+{
+bg:"../assets/bg/2.png",
+audio:"../assets/rumah.mp3"
+},
+
+{
+bg:"../assets/bg/3.png",
+audio:"../assets/sedih.mp3"
+},
+
+{
+bg:"../assets/bg/4.png",
+audio:"../assets/refleksi.mp3"
+},
+
+{
+bg:"../assets/bg/5.png",
+audio:"../assets/ceria.mp3"
+},
+
+{
+bg:"../assets/bg/6.png",
+audio:"../assets/ceria.mp3"
+},
+
+{
+bg:"../assets/bg/7.png",
+audio:"../assets/ceria.mp3"
+},
+
+{
+bg:"../assets/bg/8.png",
+audio:"../assets/hangat.mp3"
+},
+
+{
+bg:"../assets/bg/9.png",
+audio:"../assets/bahagia.mp3"
+},
+
+{
+bg:"../assets/bg/10.png",
+audio:"../assets/penutup.mp3"
+}
+
+];
+
+let i=0;
+
+const stage=document.getElementById("stage");
+
+const audio=document.getElementById("audio");
+
+function tampil(){
+
+stage.style.backgroundImage=
+`url(${data[i].bg})`;
+
+audio.src=
+data[i].audio;
+
+audio.play();
+
+}
+
+function mulai(){
+
+document.getElementById("start")
+.style.display="none";
+
+tampil();
+
+}
+
+function next(){
+
+if(i<data.length-1){
+
+i++;
+
+tampil();
+
+}
+
+}
+
+function prev(){
+
+if(i>0){
+
+i--;
+
+tampil();
+
+}
+
+}
+
+function pause(){
+
+if(audio.paused){
+
+audio.play();
+
+}else{
+
+audio.pause();
+
+}
+
+}
+
+stage.style.backgroundImage=
+`url(${data[0].bg})`;
+
+</script>
+
+</body>
+</html>

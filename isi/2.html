@@ -3,294 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR STORY - Aku Mau Membantu Ibu</title>
+  <title>CERITA QR STORY 3 - Arga dan Taman yang Berantakan</title>
 
   <style>
 
-    *{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       font-family:Arial, Helvetica, sans-serif;
-      background:linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-      url('../assets/Background.jpeg');
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.70),
+          rgba(0,0,0,0.85)
+        ),
+        url('../assets/Background.jpeg');
+
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
-      color:white;
+
+      color:#f5f5f5;
       overflow-x:hidden;
     }
 
-    .blur{
-      position:fixed;
-      border-radius:50%;
-      filter:blur(120px);
-      opacity:0.35;
-      z-index:0;
-    }
-
-    .blur1{width:350px;height:350px;background:#00ffaa;top:-100px;left:-100px;}
-    .blur2{width:420px;height:420px;background:#00cfff;bottom:-120px;right:-120px;}
-
     .container{
+      width:92%;
+      max-width:1100px;
+      margin:auto;
+      padding:50px 0 120px;
       position:relative;
       z-index:2;
-      width:92%;
-      max-width:1300px;
-      margin:auto;
-      padding:50px 0 140px;
     }
 
-    .title{text-align:center;margin-bottom:60px;}
-    .title h2{font-size:42px;}
+    .title{
+      text-align:center;
+      margin-bottom:45px;
+    }
 
-    .story-box{
+    .title h2{
+      font-size:36px;
+      color:#ffffff;
+      text-shadow:0 0 8px rgba(0,0,0,0.6);
+      margin-bottom:10px;
+    }
+
+    .title h3{
+      font-size:26px;
+      color:#ffd166;
+    }
+
+    .box{
       background:rgba(255,255,255,0.10);
-      backdrop-filter:blur(10px);
-      border:2px solid rgba(255,255,255,0.12);
-      border-radius:35px;
-      padding:40px;
-      margin-bottom:40px;
-      box-shadow:0 0 25px rgba(0,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:22px;
+      padding:28px;
+      margin-bottom:22px;
+      backdrop-filter:blur(8px);
+      box-shadow:0 5px 18px rgba(0,0,0,0.35);
     }
 
-    .story-box h3{
-      font-size:38px;
-      margin-bottom:25px;
-      color:#7dff8d;
+    .box h3{
+      font-size:24px;
+      margin-bottom:12px;
+      color:#7ee787;
     }
 
-    .narator{
-      color:#ffe082;
-      font-size:27px;
+    .text{
+      font-size:19px;
       line-height:1.9;
-      margin-bottom:20px;
+      color:#f1f1f1;
     }
 
-    .dialog{
-      font-size:27px;
-      line-height:1.9;
-      margin-left:18px;
-      margin-bottom:18px;
-    }
-
-    .action{
-      font-size:23px;
-      color:#b0bec5;
-      margin-left:35px;
-      margin-bottom:18px;
-      font-style:italic;
-    }
-
-    .moral{
-      background:rgba(255,215,0,0.10);
-      border:2px solid rgba(255,215,0,0.25);
+    .text b{
+      color:#ffffff;
     }
 
     .back-btn{
-  position:fixed;
-  bottom:30px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:9999; /* INI KUNCINYA */
+      position:fixed;
+      bottom:25px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:10;
 
-  padding:18px 55px;
-  border:none;
-  border-radius:18px;
-  font-size:28px;
-  font-weight:bold;
-  color:white;
+      padding:16px 45px;
+      border:none;
+      border-radius:15px;
 
-  cursor:pointer;
+      font-size:22px;
+      font-weight:bold;
+      color:white;
+      cursor:pointer;
 
-  background:linear-gradient(to bottom,#ffb347,#ff8c00,#cc6500);
-
-  box-shadow:
-    0 7px 0 #8f4300,
-    0 0 25px rgba(255,140,0,0.65),
-    inset 0 4px 8px rgba(255,255,255,0.45);
-}
+      background:linear-gradient(to bottom,#ffb703,#fb8500,#d97706);
+      box-shadow:0 6px 0 #7a3e00,0 0 20px rgba(255,140,0,0.4);
+    }
 
   </style>
 </head>
-<body>
 
-<div class="blur blur1"></div>
-<div class="blur blur2"></div>
+<body>
 
 <div class="container">
 
-<div class="title">
-<h2>“Aku Mau Membantu Ibu”</h2>
-</div>
+  <div class="title">
+    <h2>CERITA QR STORY 3</h2>
+    <h3>Arga dan Taman yang Berantakan</h3>
+  </div>
 
-<!-- BAGIAN 1 -->
-<div class="story-box">
-<h3>BAGIAN 1 – Pagi di Rumah</h3>
+  <!-- CERITA -->
+  <div class="box">
+    <h3>Cerita</h3>
 
+    <div class="text">
 
-<p class="narator">
-Pagi hari yang cerah, suasana rumah terasa tenang. Ibu sedang sibuk membersihkan rumah.
-</p>
+      Suatu sore, Bu Devy berkunjung ke rumah Arga. Mereka mengobrol tentang kebersihan taman di depan rumah Arga yang terlihat kurang rapi.<br><br>
 
-<p class="dialog"><b>Ibu (pelan):</b> “Hmm… lantainya masih kotor. Ibu harus menyapu dulu.”</p>
+      Bu Devy bertanya, "Arga, Ibu dengar taman di depan rumahmu sedang berantakan, ya?"<br><br>
 
-<p class="dialog"><b>Bima:</b> “Ibu, aku sudah bangun!”</p>
-<p class="dialog"><b>Ibu (tersenyum):</b> “Selamat pagi, Bima. Sudah cuci muka belum?”</p>
-<p class="dialog"><b>Bima:</b> “Sudah, Bu. Ibu sedang apa?”</p>
-<p class="dialog"><b>Ibu:</b> “Ibu sedang membersihkan rumah supaya rapi dan nyaman.”</p>
+      Arga menjawab, "Iya, Bu. Daunnya banyak sekali."<br><br>
 
-</div>
+      Ibu Arga berkata, "Daunnya memang banyak. Tapi yang membersihkan masih sedikit."<br><br>
 
-<!-- BAGIAN 2 -->
-<div class="story-box">
-<h3>BAGIAN 2 – Bima Masih Santai</h3>
+      Arga tersenyum dan berkata bahwa ia mengerti maksud itu.<br><br>
 
+      Bu Devy bertanya siapa yang biasanya membersihkan taman.<br><br>
 
-<p class="narator">
-Bima melihat ibu bekerja, tetapi ia masih ingin bermain.
-</p>
+      Arga menjawab bahwa dirinya, tetapi dengan ragu-ragu.<br><br>
 
-<p class="dialog"><b>Bima:</b> “Bu, Bima mau main dulu ya.”</p>
-<p class="dialog"><b>Ibu (lembut):</b> “Boleh, tapi nanti jangan lupa membantu ya.”</p>
-<p class="dialog"><b>Bima (cuek):</b> “Iya, Bu…”</p>
+      Bu Devy memastikan kembali apakah Arga sering membantu. Arga menjawab bahwa ia sangat jarang membantu.<br><br>
 
-<p class="narator">
-Bima pun pergi bermain, sementara ibu tetap bekerja sendirian.
-</p>
-</div>
+      Jawaban itu membuat mereka tertawa.<br><br>
 
-<!-- BAGIAN 3 -->
-<div class="story-box">
-<h3>BAGIAN 3 – Ibu Mulai Kelelahan</h3>
+      Ibu Arga bertanya kenapa Arga jarang membantu. Arga menjawab bahwa ia sedang mengumpulkan niat.<br><br>
 
+      Ketika ditanya sudah berapa lama, Arga menjawab bahwa dari minggu lalu baru setengah niat terkumpul.<br><br>
 
-<p class="narator">
-Ibu terus bekerja. Ia menyapu, merapikan meja, dan membersihkan rumah.
-</p>
+      Mereka kembali tertawa.<br><br>
 
-<p class="dialog"><b>Ibu:</b> “Aduh… capek juga ya…”</p>
+      Bu Devy kemudian menjelaskan pentingnya kebersihan lingkungan dan bertanya apakah taman bersih itu penting.<br><br>
 
-<p class="narator">
-Bima melihat ibu dari kejauhan.
-</p>
+      Arga menjawab penting karena rumah jadi enak dilihat.<br><br>
 
-<p class="dialog"><b>Bima (pelan):</b> “Ibu kelihatan capek…”</p>
-</div>
+      Ia juga bercanda bahwa Ibu tidak akan sering memanggil namanya untuk membersihkan taman.<br><br>
 
-<!-- BAGIAN 4 -->
-<div class="story-box">
-<h3>BAGIAN 4 – Bima Mulai Berpikir</h3>
+      Mereka tertawa mendengar itu.<br><br>
 
+      Bu Devy bertanya apa yang terjadi jika lingkungan kotor. Arga menjawab akan banyak nyamuk.<br><br>
 
-<p class="narator">
-Bima mulai merasa tidak enak hati.
-</p>
+      Ia juga mengatakan bahwa ibunya akan lebih sering mengingatkan dirinya.<br><br>
 
-<p class="dialog"><b>Bima:</b> “Ibu capek karena bekerja sendirian… aku harus membantu.”</p>
-</div>
+      Bu Devy bertanya apa yang harus dilakukan jika melihat sampah. Arga menjawab harus dipungut dan dibuang ke tempat sampah.<br><br>
 
-<!-- BAGIAN 5 -->
-<div class="story-box">
-<h3>BAGIAN 5 – Menawarkan Bantuan</h3>
+      Bu Devy menegaskan bahwa menjaga kebersihan adalah tanggung jawab semua orang.<br><br>
 
+      Ketika ditanya kapan mulai membersihkan taman, Arga menjawab hari ini.<br><br>
 
-<p class="dialog"><b>Bima:</b> “Ibu, aku mau membantu!”</p>
-<p class="dialog"><b>Ibu:</b> “Wah, benarkah? Terima kasih, Bima.”</p>
-<p class="dialog"><b>Bima:</b> “Iya, Bu! Biar ibu tidak capek.”</p>
-</div>
+      Saat ditanya kenapa tidak besok, Arga menjawab karena nanti pertanyaannya akan diulang lagi.<br><br>
 
-<!-- BAGIAN 6 -->
-<div class="story-box">
-<h3>BAGIAN 6 – Mulai Membersihkan</h3>
+      Mereka semua tertawa.<br><br>
 
+      Bu Devy menegaskan bahwa lingkungan bersih membuat hidup lebih sehat dan nyaman.<br><br>
 
-<p class="narator">
-Bima mulai membantu ibu.
-</p>
+      Arga pun berjanji akan lebih rajin menjaga kebersihan lingkungan.<br><br>
 
-<p class="dialog"><b>Bima:</b> “Aku akan menyapu lantai!”</p>
+      Setelah itu, Arga mulai lebih peduli terhadap kebersihan taman dan lingkungan rumahnya.
 
-<p class="dialog"><b>Ibu:</b> “Bagus sekali, Bima. Hati-hati ya.”</p>
+    </div>
+  </div>
 
-<p class="narator">
-Bima menyapu dengan semangat, walaupun belum rapi.
-</p>
+  <!-- PESAN MORAL -->
+  <div class="box">
+    <h3>Pesan Moral</h3>
 
-<p class="dialog"><b>Bima:</b> “Bu, kok masih kotor ya?”</p>
-<p class="dialog"><b>Ibu:</b> “Sapunya pelan-pelan, Nak.”</p>
-<p class="dialog"><b>Bima:</b> “Oh, begitu ya!”</p>
-</div>
-
-<!-- BAGIAN 7 -->
-<div class="story-box">
-<h3>BAGIAN 7 – Belajar Bertanggung Jawab</h3>
-
-<p class="narator">
-Bima mencoba lagi dengan lebih hati-hati.
-</p>
-
-<p class="dialog"><b>Bima:</b> “Sekarang lebih bersih!”</p>
-<p class="dialog"><b>Ibu:</b> “Iya, kamu hebat sekali.”</p>
-
-<p class="narator">
-Setelah itu, Bima membantu merapikan meja.
-</p>
-
-<p class="dialog"><b>Bima:</b> “Aku rapikan meja ya, Bu.”</p>
-</div>
-
-<!-- BAGIAN 8 -->
-<div class="story-box">
-<h3>BAGIAN 8 – Rumah Menjadi Bersih</h3>
-
-
-<p class="narator">
-Tidak lama kemudian, rumah menjadi bersih dan rapi.
-</p>
-
-<p class="dialog"><b>Ibu:</b> “Alhamdulillah, sekarang rumah kita sudah bersih.”</p>
-<p class="dialog"><b>Bima:</b> “Iya, Bu! Ternyata membantu itu menyenangkan.”</p>
-</div>
-
-<!-- BAGIAN 9 -->
-<div class="story-box">
-<h3>BAGIAN 9 – Ibu Bahagia</h3>
-
-
-<p class="dialog"><b>Ibu:</b> “Terima kasih ya, Bima. Ibu sangat senang.”</p>
-<p class="dialog"><b>Bima:</b> “Sama-sama, Bu. Bima mau membantu ibu setiap hari.”</p>
-</div>
-
-<!-- BAGIAN 10 -->
-<div class="story-box">
-<h3>BAGIAN 10 – Penutup</h3>
-
-
-<p class="narator">
-Sejak saat itu, Bima selalu membantu ibu di rumah. Mereka pun hidup dengan bahagia.
-</p>
-</div>
-
-<!-- MORAL -->
-<div class="story-box moral">
-<h3>Pesan Moral</h3>
-
-<p class="narator">
-Membantu orang tua adalah perbuatan baik yang harus kita biasakan setiap hari. Kita bisa membantu dengan hal sederhana, seperti merapikan tempat tidur, menyapu, atau membantu membereskan barang. Jika kita membantu, pekerjaan orang tua menjadi lebih ringan dan mereka akan merasa senang. Dengan saling membantu, keluarga menjadi lebih rukun dan nyaman.
-</p>
+    <div class="text">
+      Menjaga kebersihan lingkungan adalah tanggung jawab bersama. 
+      Lingkungan yang bersih membuat kita sehat, nyaman, dan terhindar dari penyakit.
+    </div>
+  </div>
 
 </div>
 
-</div>
-
-<button
-    class="back-btn"
-    onclick="window.location.href='../index.html'">
-
-    ⬅ KEMBALI
-
-  </button>
+<button class="back-btn" onclick="window.location.href='../index.html'">
+  ⬅ KEMBALI
+</button>
 
 </body>
 </html>

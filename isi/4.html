@@ -9,134 +9,109 @@
 <style>
 
 body{
-margin:0;
-overflow:hidden;
-background:#000;
-font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    overflow:hidden;
+    background:#000;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 #stage{
-width:100vw;
-height:100vh;
-background-size:cover;
-background-position:center;
-transition:1s;
-position:relative;
+    width:100vw;
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+    transition:1s;
+    position:relative;
 }
 
 .overlay{
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-rgba(0,0,0,.15),
-rgba(0,0,0,.45)
-);
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.45)
+    );
 }
 
 .nav{
-
-position:fixed;
-
-bottom:20px;
-left:50%;
-
-transform:translateX(-50%);
-
-display:flex;
-gap:12px;
-
-background:rgba(255,255,255,.22);
-
-padding:12px;
-
-border-radius:30px;
-
-backdrop-filter:blur(8px);
-
-z-index:20;
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:12px;
+    background:rgba(255,255,255,.22);
+    padding:12px;
+    border-radius:30px;
+    backdrop-filter:blur(8px);
+    z-index:20;
 }
 
 button,a{
-
-padding:12px 18px;
-
-border:none;
-border-radius:20px;
-
-font-weight:bold;
-
-text-decoration:none;
-
-cursor:pointer;
-
-color:white;
-
-font-size:18px;
-
-transition:.2s;
+    padding:12px 18px;
+    border:none;
+    border-radius:20px;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+    color:white;
+    font-size:18px;
+    transition:.2s;
 }
 
 button:hover,
 a:hover{
-transform:scale(1.06);
+    transform:scale(1.06);
 }
 
 .prev{
-background:#339af0;
+    background:#339af0;
 }
 
 .next{
-background:#51cf66;
+    background:#51cf66;
 }
 
 .pause{
-background:#fab005;
+    background:#fab005;
+}
+
+.restart{
+    background:#845ef7;
 }
 
 .back{
-background:#ff6b6b;
+    background:#ff6b6b;
 }
 
 .start{
-
-position:fixed;
-inset:0;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:rgba(0,0,0,.55);
-
-z-index:50;
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.55);
+    z-index:50;
 }
 
 .start button{
-
-font-size:30px;
-
-padding:22px 38px;
-
-background:#51cf66;
-
-box-shadow:
-0 0 30px rgba(81,207,102,.55);
+    font-size:30px;
+    padding:22px 38px;
+    background:#51cf66;
+    box-shadow:0 0 30px rgba(81,207,102,.55);
 }
 
 @media(max-width:768px){
 
-button,a{
+    button,a{
+        font-size:15px;
+        padding:10px 15px;
+    }
 
-font-size:15px;
-padding:10px 15px;
-}
-
-.start button{
-
-font-size:24px;
-padding:18px 30px;
-}
+    .start button{
+        font-size:24px;
+        padding:18px 30px;
+    }
 
 }
 
@@ -146,120 +121,114 @@ padding:18px 30px;
 <body>
 
 <div id="stage">
-
-<div class="overlay"></div>
-
+    <div class="overlay"></div>
 </div>
 
 <div class="start" id="start">
-
-<button onclick="mulai()">
-
-▶ Mulai Cerita
-
-</button>
-
+    <button onclick="mulai()">
+        ▶ Mulai Cerita
+    </button>
 </div>
 
 <div class="nav">
-
-<button class="prev" onclick="prev()">⏮</button>
-
-<button class="pause" onclick="pause()">⏸</button>
-
-<button class="next" onclick="next()">⏭</button>
-
-<a href="../index.html" class="back">⬅</a>
-
+    <button class="prev" onclick="prev()">⏮</button>
+    <button class="pause" onclick="pause()">⏸</button>
+    <button class="next" onclick="next()">⏭</button>
+    <button class="restart" onclick="restart()">🔄</button>
+    <a href="../index.html" class="back">⬅</a>
 </div>
 
 <audio id="audio"></audio>
 
 <script>
 
-const data=[
+const data = [
 
 {
-bg:"../assets/bg/kontol2.jpeg",
-audio:"../assets/kontolodon.mp3"
+    bg:"../assets/bg/kontol2.jpeg",
+    audio:"../assets/kontolodon.mp3"
 },
 
 {
-bg:"../assets/bg/bek1.jpeg",
-audio:"../assets/sorekon.mp3"
-},
-
-
+    bg:"../assets/bg/bek1.jpeg",
+    audio:"../assets/sorekon.mp3"
+}
 
 ];
 
-let i=0;
+let i = 0;
 
-const stage=document.getElementById("stage");
-
-const audio=document.getElementById("audio");
+const stage = document.getElementById("stage");
+const audio = document.getElementById("audio");
 
 function tampil(){
 
-stage.style.backgroundImage=
-`url(${data[i].bg})`;
+    stage.style.backgroundImage = `url(${data[i].bg})`;
 
-audio.src=
-data[i].audio;
+    audio.pause();
+    audio.currentTime = 0;
 
-audio.play();
+    audio.src = data[i].audio;
+
+    audio.play().catch(() => {});
 
 }
 
 function mulai(){
 
-document.getElementById("start")
-.style.display="none";
+    document.getElementById("start").style.display = "none";
 
-tampil();
+    i = 0;
+    tampil();
 
 }
 
 function next(){
 
-if(i<data.length-1){
-
-i++;
-
-tampil();
-
-}
+    if(i < data.length - 1){
+        i++;
+        tampil();
+    }
 
 }
 
 function prev(){
 
-if(i>0){
-
-i--;
-
-tampil();
-
-}
+    if(i > 0){
+        i--;
+        tampil();
+    }
 
 }
 
 function pause(){
 
-if(audio.paused){
-
-audio.play();
-
-}else{
-
-audio.pause();
+    if(audio.paused){
+        audio.play();
+    }else{
+        audio.pause();
+    }
 
 }
 
+function restart(){
+
+    i = 0;
+
+    tampil();
+
 }
 
-stage.style.backgroundImage=
-`url(${data[0].bg})`;
+audio.addEventListener("ended", () => {
+
+    if(i < data.length - 1){
+        i++;
+        tampil();
+    }
+
+});
+
+stage.style.backgroundImage = `url(${data[0].bg})`;
 
 </script>
 
